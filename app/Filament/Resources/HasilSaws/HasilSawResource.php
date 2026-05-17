@@ -6,7 +6,7 @@ use App\Filament\Resources\HasilSaws\Pages\CreateHasilSaw;
 use App\Filament\Resources\HasilSaws\Pages\EditHasilSaw;
 use App\Filament\Resources\HasilSaws\Pages\ListHasilSaws;
 use App\Filament\Resources\HasilSaws\Schemas\HasilSawForm;
-use App\Filament\Resources\HasilSaws\Tables\HasilSawsTable;
+use App\Filament\Resources\HasilSaws\Tables\HasilSawTable;
 use App\Models\HasilSaw;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -29,7 +29,7 @@ class HasilSawResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return HasilSawsTable::configure($table);
+        return HasilSawTable::configure($table);
     }
 
     public static function getRelations(): array

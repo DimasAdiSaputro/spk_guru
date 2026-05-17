@@ -8,4 +8,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreatePenilaian extends CreateRecord
 {
     protected static string $resource = PenilaianResource::class;
+
+    protected function afterCreate(): void
+    {
+        app(\App\Http\Controllers\SawController::class)->hitung();
+    }
 }

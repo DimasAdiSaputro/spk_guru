@@ -1,17 +1,16 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Guru;
+use App\Models\HasilSaw;
 use App\Models\Kriteria;
 use App\Models\Penilaian;
-use App\Models\HasilSaw;
 
 class SawController extends Controller
 {
     public function hitung()
     {
-        $gurus = Guru::all();
+        $gurus     = Guru::all();
         $kriterias = Kriteria::all();
 
         HasilSaw::truncate();
@@ -26,13 +25,13 @@ class SawController extends Controller
 
                 $penilaian = Penilaian::where('guru_id', $guru->id)
                     ->where('kriteria_id', $kriteria->id)
-                    ->avg('nilai');
+                    ->avg('nilai') ?? 0;
 
                 $max = Penilaian::where('kriteria_id', $kriteria->id)
-                    ->max('nilai');
+                    ->max('nilai') ?? 1;
 
                 $min = Penilaian::where('kriteria_id', $kriteria->id)
-                    ->min('nilai');
+                    ->min('nilai') ?? 1;
 
                 if ($kriteria->atribut == 'benefit') {
 
@@ -49,7 +48,7 @@ class SawController extends Controller
             }
 
             $hasil[] = [
-                'guru_id' => $guru->id,
+                'guru_id'     => $guru->id,
                 'nilai_akhir' => $total,
             ];
         }
@@ -59,9 +58,9 @@ class SawController extends Controller
         foreach ($hasil as $index => $item) {
 
             HasilSaw::create([
-                'guru_id' => $item['guru_id'],
+                'guru_id'     => $item['guru_id'],
                 'nilai_akhir' => $item['nilai_akhir'],
-                'ranking' => $index + 1,
+                'ranking'     => $index + 1,
             ]);
         }
 

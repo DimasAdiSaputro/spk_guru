@@ -4,7 +4,7 @@ namespace App\Filament\Resources\HasilSaws\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class HasilSawsTable
+class HasilSawTable
 {
     public static function configure(Table $table): Table
     {

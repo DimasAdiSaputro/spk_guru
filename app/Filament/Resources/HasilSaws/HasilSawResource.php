@@ -18,9 +18,11 @@ class HasilSawResource extends Resource
 {
     protected static ?string $model = HasilSaw::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-
     protected static ?string $navigationLabel = 'Hasil SAW';
+    protected static ?string $pluralModelLabel = 'Hasil SAW';
+    protected static ?string $modelLabel = 'Hasil SAW';
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function form(Schema $schema): Schema
     {

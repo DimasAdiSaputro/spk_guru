@@ -20,6 +20,10 @@ class KriteriaResource extends Resource
 {
     protected static ?string $model = Kriteria::class;
 
+    protected static ?string $navigationLabel = 'Kriteria';
+    protected static ?string $pluralModelLabel = 'Kriteria';
+    protected static ?string $modelLabel = 'Kriteria';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'nama_kriteria';

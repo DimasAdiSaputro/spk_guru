@@ -19,6 +19,10 @@ class KelasResource extends Resource
 {
     protected static ?string $model = Kelas::class;
 
+    protected static ?string $navigationLabel = 'Kelas';
+    protected static ?string $pluralModelLabel = 'Kelas';
+    protected static ?string $modelLabel = 'Kelas';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'nama_kelas';
@@ -57,10 +61,10 @@ class KelasResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index'  => ListKelas::route('/'),
+            'index' => ListKelas::route('/'),
             'create' => CreateKelas::route('/create'),
-            'view'   => ViewKelas::route('/{record}'),
-            'edit'   => EditKelas::route('/{record}/edit'),
+            'view' => ViewKelas::route('/{record}'),
+            'edit' => EditKelas::route('/{record}/edit'),
         ];
     }
 }

@@ -18,9 +18,11 @@ class PenilaianResource extends Resource
 {
     protected static ?string $model = Penilaian::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-
     protected static ?string $navigationLabel = 'Penilaian';
+    protected static ?string $pluralModelLabel = 'Penilaian';
+    protected static ?string $modelLabel = 'Penilaian';
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function form(Schema $schema): Schema
     {

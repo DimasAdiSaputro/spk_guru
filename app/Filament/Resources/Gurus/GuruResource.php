@@ -20,6 +20,10 @@ class GuruResource extends Resource
 {
     protected static ?string $model = Guru::class;
 
+    protected static ?string $navigationLabel = 'Guru';
+    protected static ?string $pluralModelLabel = 'Guru';
+    protected static ?string $modelLabel = 'Guru';
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $recordTitleAttribute = 'nama_guru';

@@ -19,9 +19,9 @@ class JurusanResource extends Resource
 {
     protected static ?string $model = Jurusan::class;
 
-    protected static string | null $navigationLabel = 'Jurusan';    
-
-    protected static string | \UnitEnum | null $navigationGroup = 'Master Data';
+    protected static ?string $navigationLabel = 'Jurusan';
+    protected static ?string $pluralModelLabel = 'Jurusan';
+    protected static ?string $modelLabel = 'Jurusan';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
@@ -61,10 +61,10 @@ class JurusanResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index'  => ListJurusans::route('/'),
+            'index' => ListJurusans::route('/'),
             'create' => CreateJurusan::route('/create'),
-            'view'   => ViewJurusan::route('/{record}'),
-            'edit'   => EditJurusan::route('/{record}/edit'),
+            'view' => ViewJurusan::route('/{record}'),
+            'edit' => EditJurusan::route('/{record}/edit'),
         ];
     }
 }
